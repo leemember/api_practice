@@ -12,4 +12,4 @@
 - sass
 - styled-components
 
-그 외에 커스터마이징 Hooks를 만들어서 코드를 간결화 시키자
+그 외에 커스터마이징 Hooks를 만들어서 코드를 간결화 시키기

@@ -17,4 +17,5 @@ const NewsPage = ({ match }) => {
 
 //gnb : 상단에 메뉴 네비게이션바
 //Newslist : 뉴스 내용들
-expect default NewsPage;
+
+export default NewsPage;
