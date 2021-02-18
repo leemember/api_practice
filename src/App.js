@@ -1,10 +1,9 @@
 import React from 'react';
+import LandingPage from './components/movie/LandingPage';
 
 function App() {
   return (
-    <div className="App">
-      <p>안녕하세요</p>
-    </div>
+    <LandingPage />
   );
 }
 
