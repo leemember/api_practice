@@ -32,3 +32,36 @@ API 키 (v3 auth)
 e322d68e81a21f38fd86583270b7e4b1
 ```
 - Text Editor에서 the MovieDB API를 위한 설정
+
+영화의 데이터를 불러올 때는
+
+```
+const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`; // page=1 첫페이지만 가져오겠다는 뜻 
+
+    fetch(endpoint) //fetch를 이용하여 가져온다.
+    .then(response => response.json()) //json을 사용해 가져온다.
+```
+
+이렇게 endpoint 라는 함수에 담아 고정값인 api_url, api,key 의 값을 넣고, 불러오고 싶은 데이터들의 주소를 입력해준다.
+그리고 fetch로 영화 api 데이터가 담긴 endpoint를 json으로 뿌려준다. 
+
+```
+.then(response => {
+
+      console.log(response)
+      setMovies([response.results]);
+      setMainMovieImage(response.results[0]); 
+      // json 결과값중 첫번째로 뜨는 이미지를 메인이미지로 설정해둔다.
+    })
+```
+후에 이렇게 콘솔창에 영화 데이터의 json을 뿌려주고, 콘솔창에 나온 result값들 중 가져오고싶은 데이터만 갖다쓰면된다.
+
+<img width="504" alt="스크린샷 2021-02-19 오후 3 48 19" src="https://user-images.githubusercontent.com/71499150/108473917-fc351280-72d1-11eb-823e-744400f0e751.png">
+
+```
+<MainImg
+  image={`${IMAGE_BASE_URL}w1280${MainMovieImage.backdrop_path}`}
+  title={MainMovieImage.original_title} //영화타이틀
+  text={MainMovieImage.overview} //영화소개
+  />
+```
