@@ -33,7 +33,7 @@ e322d68e81a21f38fd86583270b7e4b1
 ```
 - Text Editor에서 the MovieDB API를 위한 설정
 
-영화의 데이터를 불러올 때는
+## 🎥 영화의 데이터를 불러올 때는
 
 ```
 const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`; // page=1 첫페이지만 가져오겠다는 뜻 
