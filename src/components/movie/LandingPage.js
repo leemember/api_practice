@@ -35,7 +35,10 @@ function LandingPage() {
       */}
       {MainMovieImage && 
          <MainImg
-         image={`${IMAGE_BASE_URL}w1280${MainImg.backdrop_path}`} />
+         image={`${IMAGE_BASE_URL}w1280${MainMovieImage.backdrop_path}`}
+         title={MainMovieImage.original_title} //영화타이틀
+         text={MainMovieImage.overview} //영화소개
+         />
        }
       
       <div style={{ width: '85%', margin: '1rem auto' }}>
