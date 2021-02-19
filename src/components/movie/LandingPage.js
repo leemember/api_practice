@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { FaCode } from 'react-icons/fa';
+// import { FaCode } from 'react-icons/fa';
 import { API_URL, API_KEY, IMAGE_BASE_URL } from '../Config';
 import MainImg from './MainImg';
+// import axios from 'axios';
+import GridCards from './common/GridCards';
+import { Row } from 'antd';
 
-function LandingPage() {
+const LandingPage = () => {
 
-  const [movies, setMovies] = useState([]);
+  const [Movies, setMovies] = useState([]);
   const [MainMovieImage, setMainMovieImage] = useState(null);
   //많은 정보들을 가져오기 위해 [] 배열을 사용한다.
 
@@ -17,7 +20,6 @@ function LandingPage() {
     fetch(endpoint) //fetch를 이용하여 가져온다.
     .then(response => response.json()) //json을 사용해 가져온다.
     .then(response => {
-
       console.log(response)
       setMovies([response.results]);
       setMainMovieImage(response.results[0]); 
@@ -35,9 +37,9 @@ function LandingPage() {
       */}
       {MainMovieImage && 
          <MainImg
-         image={`${IMAGE_BASE_URL}w1280${MainMovieImage.backdrop_path}`}
-         title={MainMovieImage.original_title} //영화타이틀
-         text={MainMovieImage.overview} //영화소개
+          image={`${IMAGE_BASE_URL}w1280${MainMovieImage.backdrop_path}`}
+          title={MainMovieImage.original_title} //영화타이틀
+          text={MainMovieImage.overview} //영화소개
          />
        }
       
@@ -45,6 +47,20 @@ function LandingPage() {
         <h2>영화앱</h2>
 
         <hr />
+
+        {/* 그리드 카드 */}
+        <Row gutter={[16, 16]}>
+          {Movies && Movies.map((movie, index) => (
+            <React.Fragment key={index}>
+              <GridCards
+                image={movie.poster_path ?
+                `${IMAGE_BASE_URL}w500${movie.poster_path}` : null}
+                movieId={movie.id}
+                movieName={movie.original_title}
+              />
+            </React.Fragment>
+          ))}
+        </Row>        
       </div>
 
       <div style={{ display: 'flex', justifyContent: 'center'}}>

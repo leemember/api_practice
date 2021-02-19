@@ -65,3 +65,40 @@ const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page
   text={MainMovieImage.overview} //영화소개
   />
 ```
+
+## 🌹 플러그인 꿀팁
+> 플러그인 설치할 때 검색창에 ES7를 치고 <ES7 React/Redux/GraphQL/React-Native snippets> 이 플러그인을 설치한다.
+그리고 rfce 입력 후 엔터치면 기본 function 함수가 자동으로 입력된다.
+
+```
+import React from 'react'
+
+function GridCard() {
+  return (
+    <div>
+      
+    </div>
+  )
+}
+
+export default GridCard
+
+```
+
+이렇게!!
+
+## antd-design을 사용하여 그리드 카드 만들기
+
+```
+<Col lg={6} md={8} xs={24}>
+  <div style={{ position: 'relative'}}>
+    <a href >
+      <img />
+    </a>
+  </div>
+</Col>
+```
+>기본적으로 한 컬럼당 24이다.
+- lg (가장 큰 사이즈/데스크탑 화면) : 6을 넣으면 4개가 보인다.
+- m (테블릿 기준) : 8을 넣으면 3개가 보일 것이다.
+- s (모바일 기준) : 24를 입력하면 1개의 카드만 보인다.

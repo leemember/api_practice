@@ -1,6 +1,6 @@
 import React from 'react';
 
-function MainImg(props) {
+const MainImg = (props) => {
   return (
     // props을 이용해서 이미지 정보를 가져올 수 있다.
     <div style={{ 
