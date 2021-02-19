@@ -102,3 +102,15 @@ export default GridCard
 - lg (가장 큰 사이즈/데스크탑 화면) : 6을 넣으면 4개가 보인다.
 - m (테블릿 기준) : 8을 넣으면 3개가 보일 것이다.
 - s (모바일 기준) : 24를 입력하면 1개의 카드만 보인다.
+
+>> 그리드 적용이 안되는 경우
+https://ant.design/docs/react/introduce 에 들어가서 공식문서 확인해보고 해결하기
+
+
+index.js 에 
+
+```
+import 'antd/dist/antd.css';
+```
+
+를 추가 했어야 했다.

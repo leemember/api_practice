@@ -21,7 +21,10 @@ const LandingPage = () => {
     .then(response => response.json()) //json을 사용해 가져온다.
     .then(response => {
       console.log(response)
-      setMovies([response.results]);
+      setMovies([...Movies, ...response.results]);
+      //위에 setMovies([a,b])중 a는 현재 가지고 있는 Movies들이다.
+      //근데 ...을 사용한 이유는 object들이 이미 여러개 배열로 들어있기 때문에 사용했다.
+      //b에서도 ...을 사용했을 때는 object들이 여러개라는 뜻이다. *JSON 파일 안에 여러 오브젝트들이 들어있음*
       setMainMovieImage(response.results[0]); 
       // json 결과값중 첫번째로 뜨는 이미지를 메인이미지로 설정해둔다.
     })
